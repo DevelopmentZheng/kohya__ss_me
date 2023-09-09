@@ -16,6 +16,12 @@ from accelerate.utils import set_seed
 from diffusers import DDPMScheduler
 from library import model_util
 
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "7"
+
+device = torch.device("cuda:7") 
+
+
 import library.train_util as train_util
 from library.train_util import (
     DreamBoothDataset,
